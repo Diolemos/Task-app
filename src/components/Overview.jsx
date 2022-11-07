@@ -1,12 +1,16 @@
 import React from "react";
-
+import {FaTimes} from 'react-icons/fa'
 const Overview = (props) => {
-  const { tasks } = props;
+  const { tasks, handleDelete } = props;
 
   return (
     <ul>
       {tasks.map((task) => {
-        return <li key={task.id}>{task.text}</li>;
+        return <li key={task.id}>{task.text}
+        <button onClick={()=>{handleDelete(task.id)} } className='close'>
+          <FaTimes color='purple'></FaTimes>
+        </button>
+        </li>;
       })}
     </ul>
   );

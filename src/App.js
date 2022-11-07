@@ -24,6 +24,17 @@ class App extends Component {
     });
   };
 
+  handleDelete = (e)=>{
+     if(window.confirm("You are about to delete this task, are you sure?")){
+      this.setState({
+        tasks: this.state.tasks.filter((item)=>item.id != e )
+      })
+      
+     }
+    
+    
+  }
+
   onSubmitTask = (e) => {
     e.preventDefault();
     this.setState({
@@ -50,7 +61,7 @@ class App extends Component {
           />
           <button type="submit">Add Task</button>
         </form>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} handleDelete={this.handleDelete} />
       </div>
     );
   }
