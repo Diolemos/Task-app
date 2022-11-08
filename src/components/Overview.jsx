@@ -10,6 +10,7 @@ const Overview = (props) => {
         <button onClick={()=>{handleDelete(task.id)} } className='close'>
           <FaTimes color='purple'></FaTimes>
         </button>
+        <button >Edit</button>
         </li>;
       })}
     </ul>

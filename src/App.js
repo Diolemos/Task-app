@@ -27,7 +27,7 @@ class App extends Component {
   handleDelete = (e)=>{
      if(window.confirm("You are about to delete this task, are you sure?")){
       this.setState({
-        tasks: this.state.tasks.filter((item)=>item.id != e )
+        tasks: this.state.tasks.filter((item)=>item.id !== e )
       })
       
      }
